@@ -16,11 +16,8 @@ export default function App() {
 export const Encabezado = () => {
   return (
     <View style={styles.encabezado}>
-        <Text style={styles.texto}></Text>
-      <Image
-        source={require('./assets/face.png')}
-        style={styles.logo}
-      />
+      <Text style={styles.texto}></Text>
+      
       <Text style={styles.texto}></Text>
     </View>
   );
@@ -29,6 +26,10 @@ export const Encabezado = () => {
 export function Cuerpo() {
   return (
     <View style={styles.contenido}>
+      <Image
+        source={require('./assets/face.png')}
+        style={styles.logo}
+      />
       <Login />
     </View>
   );
@@ -56,17 +57,19 @@ export const Login = () => {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
+          placeholderTextColor="#fff"
           placeholder="Email or Phone"
         />
       </View>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
+          placeholderTextColor="#fff"
           placeholder="Password"
           secureTextEntry={true}
         />
       </View>
-      <Button title="Login" />
+      <Button title="Login" style={styles.button} />
     </View>
   );
 }
@@ -91,7 +94,7 @@ const styles = StyleSheet.create({
     height: 50,
     resizeMode: 'contain',
     alignSelf: 'center',
-    alignItems: 'center',
+    marginBottom: 10,  // Ajusta esta propiedad para controlar la posición vertical de la imagen
   },
   pie: {
     flexDirection: 'row',
@@ -100,7 +103,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     padding: 10,
-   
   },
   contenido: {
     flex: 8,
@@ -116,7 +118,6 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginBottom: 20,
-    
   },
   input: {
     borderBottomWidth: 1,
@@ -124,6 +125,12 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 16,
     marginTop: 5,
-    color : '#white',
+    color: '#fff',
+  },
+  button: {
+    backgroundColor: 'rgba(255, 255, 255, 0.5)', 
+    marginTop: 50,
+    padding: 10,
+    borderRadius: 5,
   },
 });
